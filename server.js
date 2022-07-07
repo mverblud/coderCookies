@@ -17,7 +17,8 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     secret: 'secretKey',
-    store: MongoStore.create({mongoUrl:'mongodb+srv://mverblud:OKsEHOlsWDvPBHej@mverblud.pawqn.mongodb.net/sessionMongoAtlas?retryWrites=true&w=majority'})
+    cookie: {maxAge: 600000}, // 10 minutos = 600000 milisegundos
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://mverblud:OKsEHOlsWDvPBHej@mverblud.pawqn.mongodb.net/sessionMongoAtlas?retryWrites=true&w=majority' })
 }));
 
 app.use('/', apiRoutes);

@@ -1,12 +1,11 @@
 import express from "express";
 import session from "express-session";
-//import sessionFileStore from "session-file-store";
 import apiRoutes from "./src/routes/apiRoutes.js";
 import MongoStore from "connect-mongo";
-//import './src/db/database.js';
-
+import './src/db/database.js';
+import './src/passport/local.js'
+import passport from 'passport';
 const app = express();
-//const fileStore = sessionFileStore(session)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +20,8 @@ app.use(session({
     store: MongoStore.create({ mongoUrl: 'mongodb+srv://mverblud:OKsEHOlsWDvPBHej@mverblud.pawqn.mongodb.net/sessionMongoAtlas?retryWrites=true&w=majority' })
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', apiRoutes);
 
 const PORT = 8080;

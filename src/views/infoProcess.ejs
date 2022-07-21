@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Informacion Process</title>
+</head>
+
+<body class="container mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+        <h1 class="mb-5">Process info </h1>
+
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Argumentos:</li>
+            <li class="list-group-item"><%= infoProcess.argumentos %></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">Nombre de la plataforma</li>
+            <li class="list-group-item"><%= infoProcess.platform %></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item">Version</li>
+            <li class="list-group-item"><%= infoProcess.version %></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-lg">
+            <li class="list-group-item">Memoria</li>
+            <li class="list-group-item"><%= infoProcess.memory.rss %></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-xl">
+            <li class="list-group-item">Path</li>
+            <li class="list-group-item"><%= infoProcess.path %></li>
+          </ul>
+          <ul class="list-group list-group-horizontal-xxl">
+            <li class="list-group-item">ID</li>
+            <li class="list-group-item"><%= infoProcess.id %></li>
+          </ul>
+
+    </div>
+
+
+
+</body>
+
+</html>

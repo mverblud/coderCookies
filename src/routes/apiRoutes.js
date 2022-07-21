@@ -47,4 +47,18 @@ router.get('/register', (req, res) => {
     res.render('register')
 })
 
+router.get('/info', (req, res) => {
+
+    const infoProcess = {
+        argumentos : process.argv,
+        platform : process.platform,
+        version : process.version,
+        memory : process.memoryUsage(),
+        path : process.cwd(),
+        id: process.pid
+    }
+   // res.end(JSON.stringify(infoProcess))
+    res.render('infoProcess',{infoProcess})
+})
+
 export default router;

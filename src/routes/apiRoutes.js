@@ -1,6 +1,8 @@
 import { Router } from "express";
 import passport from 'passport';
+import os from 'os';
 
+const numProcesadores = os.cpus().length;
 const router = Router();
 
 function isAuth(req, res, next) {
@@ -55,7 +57,8 @@ router.get('/info', (req, res) => {
         version : process.version,
         memory : process.memoryUsage(),
         path : process.cwd(),
-        id: process.pid
+        id: process.pid,
+        procesadores: numProcesadores
     }
    // res.end(JSON.stringify(infoProcess))
     res.render('infoProcess',{infoProcess})

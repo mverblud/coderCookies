@@ -28,7 +28,7 @@ app.use(passport.session());
 
 app.use('/', apiRoutes);
 
-app.use('/randoms', apiRandoms);
+app.use('/api', apiRandoms);
 
 // Si no recibo puerto por defecto puerto 8080
 const PORT =  process.argv[2] || 8080;

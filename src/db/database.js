@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import 'dotenv/config';
+import logger from "../../logger.js";
+
 
 mongoose.connect(
     process.env.MONGO_DB
 )
-    .then(response => console.log('Conectado a la BD'))
-    .catch(err => console.log(err))
+    .then(response => logger.info('Conectado a la BD'))
+    .catch(err => logger.error(`error al conecta a la BD ${err}`))

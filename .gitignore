@@ -6,3 +6,4 @@ child.js
 appCluster.js
 /log4js
 /winston
+.env

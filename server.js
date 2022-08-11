@@ -51,7 +51,7 @@ app.get('*', (req, res) => {
 })
 
 // Si no recibo puerto por defecto puerto 8080
-const PORT =  process.argv[2] || 8080;
+const PORT =  process.env.PORT || 8080;
 app.listen(PORT, () => {
     logger.info(`Esuchando el puerto ${PORT}`)
     console.log(`Esuchando el puerto ${PORT}`);
